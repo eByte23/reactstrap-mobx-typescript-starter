@@ -17,6 +17,7 @@ import { Link, Switch, Route, NavLink } from 'react-router-dom';
 import Manage from "./views/manage";
 import Home from "./views/home";
 import Audio from "./views/audio";
+import Forms from './views/forms';
 
 export default class Example extends React.Component<{}, { isOpen: boolean }> {
     constructor(props: {}, state: { isOpen: boolean }) {
@@ -45,6 +46,9 @@ export default class Example extends React.Component<{}, { isOpen: boolean }> {
                                     <NavLink to="/audio" activeClassName="active" className="nav-link">Audio</NavLink>
                                 </NavItem>
                                 <NavItem>
+                                    <NavLink to="/forms" activeClassName="active" className="nav-link">Forms</NavLink>
+                                </NavItem>
+                                <NavItem>
                                     {/* <NavLink href="">GitHub</NavLink> */}
                                 </NavItem>
                                 <UncontrolledDropdown nav inNavbar>
@@ -63,8 +67,9 @@ export default class Example extends React.Component<{}, { isOpen: boolean }> {
                 <Switch>
 
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/audio" component={Audio} />
 
+                    <Route exact path="/audio" component={Audio} />
+                    <Route path="/forms" component={Forms} />
                     <Route path="/manage" component={Manage} />
                 </Switch>
             </div>
