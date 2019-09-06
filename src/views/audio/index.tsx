@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { Jumbotron, Container, Row, Col, Button } from 'reactstrap';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import { observable, action } from 'mobx';
+import { IAudioStore } from '../../stores/audioStore';
+import EventBus from '../../events/bus';
 
+@inject("audioStore")
 @observer
-export default class AudioEl extends Component<{}> {
+export default class AudioEl extends Component<{audioStore: IAudioStore}> {
 
     @observable inputField: string = "";
-    @observable audioFiles: string[] = [];
+    // @observable audioFiles: string[] = [];
 
     audioStream: HTMLAudioElement | null = null;
 
@@ -36,7 +39,7 @@ export default class AudioEl extends Component<{}> {
                             <div>
 
                                 {
-                                    this.audioFiles.map(x => <div>{x}</div>)
+                                    this.props.audioStore.files.map(x => <div>{x}</div>)
                                 }
                             </div>
                         </Col>
@@ -54,9 +57,19 @@ export default class AudioEl extends Component<{}> {
 
     @action
     async addAudioFile(): Promise<void> {
-        this.audioFiles.push(this.inputField);
+        let val = this.inputField;
 
+        console.log("Clicked")
+        console.log("Clicked")
+
+        await EventBus.addAudioFile(val);
+        // .then(()=>{
+            // console.log("Ran?")
+        // })
         this.setInputFiled("");
+        // this.audioFiles.push(this.inputField);
+
+       
         // this.audioStream!.srcObject=
         // let ms = new MediaStream();
         // let an = new AudioNode();
@@ -101,11 +114,11 @@ export default class AudioEl extends Component<{}> {
         // request.send();
 
 
-        const audioCtx = new AudioContext();
-        const source = audioCtx.createBufferSource();
-        this.getAudio(this.audioFiles[0], audioCtx)
-            .then(audioBuffer => this.linkAudio(audioBuffer, audioCtx, source))
-            .catch(console.error);
+        // const audioCtx = new AudioContext();
+        // const source = audioCtx.createBufferSource();
+        // this.getAudio(this.props.audioStore.files[0], audioCtx)
+        //     .then(audioBuffer => this.linkAudio(audioBuffer, audioCtx, source))
+        //     .catch(console.error);
 
 
 
@@ -124,7 +137,7 @@ export default class AudioEl extends Component<{}> {
         // audioElem.controls = true;
         // document.body.appendChild(audioElem);
         source!.onended = (e) => {
-            this.getAudio(this.audioFiles[0], audioCtx)
+            this.getAudio(this.props.audioStore.files[0], audioCtx)
                 .then(audioBuffer => this.linkAudio(audioBuffer, audioCtx, source))
                 .catch(console.error);
         }
@@ -132,7 +145,7 @@ export default class AudioEl extends Component<{}> {
     }
 
     async getAudio(url: string, audioCtx: AudioContext): Promise<AudioBuffer> {
-        return fetch(this.audioFiles[0], { mode: "no-cors" })
+        return fetch(this.props.audioStore.files[0], { mode: "no-cors" })
             .then(resp => resp.arrayBuffer())
             .then(buf => audioCtx.decodeAudioData(buf))
     }

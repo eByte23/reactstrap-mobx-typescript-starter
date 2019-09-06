@@ -9493,6 +9493,11 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
+ts-event-bus@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ts-event-bus/-/ts-event-bus-2.0.0.tgz#05e16fab84a0945dfaf8cb6c2d249e1c64339dc4"
+  integrity sha512-VsK7oR7ebR1u3WRJR8R2YmuQkvmIoREvs/Xv3cHzgb2O9iKFDsO8MTSZPWF66JfxtpWqzrl4TOrGVpAsLryhOQ==
+
 ts-pnp@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.1.2.tgz#be8e4bfce5d00f0f58e0666a82260c34a57af552"

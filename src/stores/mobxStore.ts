@@ -5,6 +5,7 @@ export interface IMobxStore {
     name: string;
     greeting: string;
     setName(name: string): void;
+    
 }
 
 export class MobxStore implements IMobxStore {
