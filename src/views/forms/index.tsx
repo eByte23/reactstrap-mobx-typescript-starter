@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Component } from "react";
-import { Switch, Route } from "react-router";
-import { Container, Row, Col, ListGroup, Jumbotron, Form, FormGroup, Label, Input, Button, FormText, FormFeedback } from "reactstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Container, Col, Jumbotron, Form, FormGroup, Label, Input, Button, FormText, FormFeedback } from "reactstrap";
+// import { Link, NavLink as RouteLink } from "react-router-dom";
 
 
 
