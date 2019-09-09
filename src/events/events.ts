@@ -1,4 +1,6 @@
-import { slot, Slot } from 'ts-event-bus'
+import { slot, 
+    // Slot
+ } from 'ts-event-bus'
 
 const MyEvents = {
     sayHello: slot<string>(),

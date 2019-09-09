@@ -3,6 +3,8 @@
     "target": "es2017",
     "module": "esnext",
     "jsx": "preserve",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "strict": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,

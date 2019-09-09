@@ -50,12 +50,12 @@ export default class Manage extends Component<{}>{
     }
 }
 
-const Thing1 = ()=>{
+// const Thing1 = ()=>{
 
-    return(
-        <div>Thing2</div>
-    )
-};
+//     return(
+//         <div>Thing2</div>
+//     )
+// };
 const Thing2 = ()=>{
 
     return(

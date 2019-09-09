@@ -9,7 +9,6 @@ import AppNavbar from './components/Nav';
 import EventListeners from './events/EventListeners/EventListener';
 import { inject, observer } from 'mobx-react';
 import { AuthStore } from './stores/authStore';
-import { render } from 'react-dom';
 import ForgotPassword from './views/login/forgotPassword';
 
 
@@ -17,7 +16,7 @@ import ForgotPassword from './views/login/forgotPassword';
 const App = () => {
     const AppNav = withRouter(AppNavbar);
     EventListeners();
-    return (
+    return ( 
         <div>
             <Switch>
                 <Route exact path="/login" component={Login} />

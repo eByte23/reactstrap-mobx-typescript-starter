@@ -20,10 +20,8 @@ export default class Login extends Component<{
     }
 }, { redirectToReferrer: boolean }>{
     @observable isPosting: boolean = false;
-    constructor(props: any) {
-        super(props);
-        this.state = { redirectToReferrer: false };
-    }
+
+    state = { redirectToReferrer: false };
 
 
 

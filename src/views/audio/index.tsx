@@ -136,7 +136,8 @@ export default class AudioEl extends Component<{audioStore: IAudioStore}> {
         // const audioElem = new Audio();
         // audioElem.controls = true;
         // document.body.appendChild(audioElem);
-        source!.onended = (e) => {
+        source!.onended = () => {
+            
             this.getAudio(this.props.audioStore.files[0], audioCtx)
                 .then(audioBuffer => this.linkAudio(audioBuffer, audioCtx, source))
                 .catch(console.error);
@@ -145,6 +146,7 @@ export default class AudioEl extends Component<{audioStore: IAudioStore}> {
     }
 
     async getAudio(url: string, audioCtx: AudioContext): Promise<AudioBuffer> {
+        console.log(url);
         return fetch(this.props.audioStore.files[0], { mode: "no-cors" })
             .then(resp => resp.arrayBuffer())
             .then(buf => audioCtx.decodeAudioData(buf))

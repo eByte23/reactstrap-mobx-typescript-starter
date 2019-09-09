@@ -29,14 +29,16 @@ export class AuthStore implements IAuthStore {
     async authenticate(input: AuthenticateInput): Promise<AuthenticateResult> {
 
 
-        return new Promise((res, reject) => {
+        return new Promise((res) => {
             setTimeout(() => {
                 this.isAuthenticated = true;
+                console.log(input.username)
                 res({
                     error: null,
                     success: true
                 })
             }, 2000);
+
         });
 
     }

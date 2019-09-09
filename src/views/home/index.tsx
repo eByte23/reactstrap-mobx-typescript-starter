@@ -9,11 +9,6 @@ import { Container, Jumbotron } from "reactstrap";
 
 export default class Home extends Component<{}>{
 
-    constructor(props: any) {
-        super(props);
-    }
-
-
 
     render() {
         return (
