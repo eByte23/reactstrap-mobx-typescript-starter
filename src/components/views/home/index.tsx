@@ -10,6 +10,7 @@ import { Container, Jumbotron } from "reactstrap";
 export default class Home extends Component<{}>{
 
 
+
     render() {
         return (
             <Jumbotron fluid={false}>

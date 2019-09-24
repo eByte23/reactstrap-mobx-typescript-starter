@@ -24,21 +24,20 @@ export enum AuthError {
 
 export class AuthStore implements IAuthStore {
 
-    @observable isAuthenticated: boolean = false;
+    @observable isAuthenticated: boolean = true;
 
     async authenticate(input: AuthenticateInput): Promise<AuthenticateResult> {
 
 
         return new Promise((res) => {
+            console.log(input.username)
             setTimeout(() => {
                 this.isAuthenticated = true;
-                console.log(input.username)
                 res({
                     error: null,
                     success: true
                 })
             }, 2000);
-
         });
 
     }

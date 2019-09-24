@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Jumbotron, Container, Row, Col, Button } from 'reactstrap';
 import { observer, inject } from 'mobx-react';
 import { observable, action } from 'mobx';
-import { IAudioStore } from '../../stores/audioStore';
-import EventBus from '../../events/bus';
+import { IAudioStore } from '../../../stores/audioStore';
+import EventBus from '../../../events/bus';
 
 @inject("audioStore")
 @observer
@@ -137,7 +137,6 @@ export default class AudioEl extends Component<{audioStore: IAudioStore}> {
         // audioElem.controls = true;
         // document.body.appendChild(audioElem);
         source!.onended = () => {
-            
             this.getAudio(this.props.audioStore.files[0], audioCtx)
                 .then(audioBuffer => this.linkAudio(audioBuffer, audioCtx, source))
                 .catch(console.error);

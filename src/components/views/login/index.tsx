@@ -3,7 +3,7 @@ import { Component } from "react";
 import { SignInForm, SignInFormData } from "../forms";
 import { Redirect } from "react-router";
 import { observer, inject } from "mobx-react";
-import { AuthStore } from "../../stores/authStore";
+import { AuthStore } from "../../../stores/authStore";
 import { observable } from "mobx";
 import { NavLink as RouteLink } from "react-router-dom";
 
@@ -20,8 +20,10 @@ export default class Login extends Component<{
     }
 }, { redirectToReferrer: boolean }>{
     @observable isPosting: boolean = false;
-
-    state = { redirectToReferrer: false };
+    constructor(props: any) {
+        super(props);
+        this.state = { redirectToReferrer: false };
+    }
 
 
 

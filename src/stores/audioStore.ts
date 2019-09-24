@@ -1,11 +1,10 @@
-import {
-    observable, action,
-    // computed 
-} from 'mobx';
+import { observable, action, 
+    // computed
+ } from 'mobx';
 import { persist } from 'mobx-persist';
 
 export interface IAudioStore {
-
+   
 
     addFile(url: string): void;
     files: string[];

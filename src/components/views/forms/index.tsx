@@ -9,6 +9,9 @@ import { observable, action } from "mobx";
 
 export default class Forms extends Component<{}>{
 
+   
+
+
     render() {
         return (
             <div>
@@ -32,17 +35,14 @@ export interface SignInFormData {
     password: string
 }
 
-export type SignInFormState = {
-    validate: { emailState: string }
-}
-
-const defaultSigninFormState : SignInFormState = { validate: { emailState: "" } };
-
-export class SignInForm extends Component<{ onSubmit: (data: SignInFormData) => void, isPosting: boolean }, SignInFormState>{
+export class SignInForm extends Component<{ onSubmit: (data: SignInFormData) => void, isPosting: boolean }, { validate: { emailState: string } }>{
     @observable formData: SignInFormData = { email: "", password: "" };
 
-    state = defaultSigninFormState;
+    constructor(props: any) {
+        super(props);
 
+        this.state = { validate: { emailState: "" } }
+    }
 
     validateEmail(val: string) {
         const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

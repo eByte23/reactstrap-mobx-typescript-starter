@@ -32,8 +32,13 @@ $green:                           #4dbd74;
 $teal:                            #20c997 !default;
 $cyan:                            #63c2de;
 
+$pesec-primary-green:             #67ce79;
+$pesec-secondary-green:           #55b165;
+
 $colors: (
   blue:                           $blue,
+  pesec-green-light:              $pesec-primary-green,
+  pesec-green-dark:               $pesec-secondary-green,
   indigo:                         $indigo,
   purple:                         $purple,
   pink:                           $pink,
@@ -57,6 +62,8 @@ $theme-colors: (
   danger:                         $red,
   light:                          $gray-100,
   dark:                           $gray-800,
+  pesec-light-green:              $pesec-primary-green,
+  pesec-dark-green:              $pesec-secondary-green,
   lea-primary:                    $oran-21,
   lea-primary-gray:               $gray-433,
   lea-secondary:                  $oran-151,
@@ -117,3 +124,6 @@ $table-bg-hover:                  $gray-100;
 $input-group-addon-bg:            $gray-100;
 $input-border-color:              $gray-200;
 $input-group-addon-border-color:  $gray-200;
+
+$navbar-toggler-icon:                 url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.7)' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !default;
+$navbar-toggler-icon-hover:           url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !default;

@@ -1,0 +1,52 @@
+// Here you can add other styles
+@import "bootstrap-variables";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sidebar {
+    // height: calc(100vh - 70px);
+}
+
+.sidebar.sidebar-fixed {
+    position: fixed;
+    z-index: 1019;
+    display: none;
+    width: 200px;
+    height: calc(100vh - 55px);
+}
+@include media-breakpoint-up(md) {
+    .sidebar.sidebar-fixed+ .app-body{
+        margin-left: 200px;
+        display: block;
+    }
+}
+
+
+
+.navbar-dark .navbar-toggler{
+  
+
+    .navbar-toggler-icon{
+        height:1.2em;
+        width:1.2em;
+        
+        background-image: $navbar-toggler-icon;
+
+        &:hover{
+            background-image: $navbar-toggler-icon-hover;
+        }
+    }
+    &:hover{
+        .navbar-toggler-icon{
+            background-image: $navbar-toggler-icon-hover;
+        }
+    }
+}
